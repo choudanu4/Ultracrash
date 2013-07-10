@@ -1,0 +1,19 @@
+Ultracrash
+Main Contributors: Anurag Choudhury and Matthew Webb
+Based on Astrocrash by Micheal Dawson
+
+
+Ultracrash is a reflex-minded top down off-rails shooter in which you attempt to
+survive the continous onslaught of danger within an asteroid field.
+
+
+----Version History----
+(Alpha)
+7/6/13--0.1 - Astreoid Manifestation
+               --0.3 - Ship Movement and Drift Physics
+               --0.4 -Missiles and Fire Rate
+               --0.6- Collision Detection
+               --0.7- Explosion Animation  (and more concise code)
+ (Beta)
+7/7/13 --0.8- Levels, Scorekeeping, and Sounds
+                --0.9- Vocab and Ammo (FORK)

@@ -285,10 +285,11 @@ class Missile(Collider):
         if self.lifetime == 0:
             self.destroy()
 
+
 class Vocab(object):
     """Object that deals with vocab files"""
     current_guess = ""
-    lines = []
+    lines = list()
     lines_len = 0
     word_choice = ""
     phrase = "Decode " + word_choice + " for Missiles: " + current_guess
@@ -297,26 +298,29 @@ class Vocab(object):
     
     def __init__(self):
         try:
-            vocab_file = open("vocab.txt.", "r")
+            vocab_file = open("vocab.txt", "r")
         except IOError:
             print("No file called 'vocab.txt'. Please add 'vocab.txt'")
         
-        self.lines = vocab_file.readlines()
-        self.lines_len = len(self.lines)
-        self.new_word()
+        Vocab.lines = vocab_file.readlines()
+        for shit in Vocab.lines:
+            print(shit)
+        Vocab.lines_len = len(Vocab.lines)
+        Vocab.new_word(self)
 
     def new_word(self):
-        word_line = (random.randrange(0, self.lines_len))/2 + self.language
+        word_line = (random.randrange(0, Vocab.lines_len))/2 + Vocab.language
         word_line = int(word_line)
         self.word_choice = self.lines[word_line]
         self.phrase = "Decode " + self.word_choice + " for Missiles: " + self.current_guess
-        screen_guess = games.Text(value = self.phrase,
-                                  size = 30,
-                                  color = color.black,
-                                  x = 30,
-                                  y = games.screen.height-10)
-        screen_guess.left = 5
-        games.screen.add(screen_guess)
+        self.screen_guess = games.Text(value = self.phrase,
+                                       size = 30,
+                                       color = color.black,
+                                       x = 30,
+                                       y = games.screen.height-10,
+                                       is_collideable = False)
+        self.screen_guess.left = 5
+        games.screen.add(self.screen_guess)
 
     def check(self):
         if self.current_guess == self.word_choice:

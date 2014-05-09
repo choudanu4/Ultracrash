@@ -1,5 +1,6 @@
 # Astrocrash 1
 # Get asteroids moving on the screen
+#HACKERHACKERASdkjasdhklajsdhaksdhasklja
 
 import random, math
 from livewires import games, color
